@@ -1,0 +1,10 @@
+CREATE TABLE VentasDia(
+dDia DATE,
+nEstado INT
+)
+
+GO
+
+INSERT INTO VentasDia
+SELECT CONVERT(DATE, ven_fecha),0 
+FROM venta GROUP BY CONVERT(DATE, ven_fecha)
